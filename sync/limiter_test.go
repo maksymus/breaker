@@ -56,7 +56,7 @@ func TestPool_TakeExhausted(t *testing.T) {
   })
 }
 
-func takeTicket(limiter *Limiter) *struct{} {
+func takeTicket(limiter Limiter) *struct{} {
   select {
   case ticket := <-limiter.Take():
     return ticket

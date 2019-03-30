@@ -6,6 +6,7 @@ type Limiter interface {
   Take() <-chan *struct{}
   TakeOrNil() *struct{}
   Return(ticket *struct{})
+  Size() int
 }
 
 // ticket based pool to limit number of invocations
